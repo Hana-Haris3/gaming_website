@@ -1,0 +1,9 @@
+exports.whackaTitan=(req,res)=>{
+    res.render('games/titan')
+}
+exports.rockPaper=(req,res)=>{
+    res.render('games/rockPaperScissors')
+}
+exports.game3Page=(req,res)=>{
+    res.render('games/ticTacToe')
+}

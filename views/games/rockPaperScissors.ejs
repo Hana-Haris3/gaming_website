@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+    <link rel="stylesheet" href="/css/rock.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <%- include('../navbar') %>
+        <div class="game">
+            <h1 id="opponent-score">0</h1>
+            <img id="opponent-choice"><br>
+            <img id="your-choice">
+            <div id="choices"></div>
+            <h1 id="your-score">0</h1>
+        </div>
+
+        <script>
+            var you
+            var yourScore = 0
+            var opponent
+            var opponentScore = 0
+            var choices = ['rock', 'paper', 'scissors']
+            var winningScore = 10
+
+            window.onload = function () {
+                for (let i = 0; i < 3; i++) {
+                    let choice = document.createElement('img')
+                    choice.id = choices[i]
+                    choice.src = '/images/' + choices[i] + '.png'
+                    choice.addEventListener('click', selectChoice);
+                    document.getElementById('choices').append(choice)
+                }
+            }
+
+            function selectChoice() {
+                you = this.id
+                document.getElementById('your-choice').src = '/images/' + you + '.png'
+
+                opponent = choices[Math.floor(Math.random() * 3)]
+                document.getElementById('opponent-choice').src = '/images/' + opponent + '.png'
+
+                if (you == opponent) {
+                    yourScore += 1
+                    opponentScore += 1
+                }
+                else {
+                    if (you == 'rock') {
+                        if (opponent == 'scissors') yourScore += 1
+                        else if (opponent == 'paper') opponentScore += 1
+                    }
+                    else if (you == 'scissors') {
+                        if (opponent == 'paper') yourScore += 1
+                        else if (opponent == 'rock') opponentScore += 1
+                    }
+                    else if (you == 'paper') {
+                        if (opponent == 'rock') yourScore += 1
+                        else if (opponent == 'scissors') opponentScore += 1
+                    }
+                }
+
+                document.getElementById('your-score').innerText = yourScore
+                document.getElementById('opponent-score').innerText = opponentScore
+
+                if (yourScore >= winningScore) {
+                    alert("🎉 You WIN the game!")
+                    resetGame()
+                } else if (opponentScore >= winningScore) {
+                    alert("💀 You LOST the game!")
+                    resetGame()
+                }
+            }
+
+            function resetGame() {
+                yourScore = 0
+                opponentScore = 0
+                document.getElementById('your-score').innerText = 0
+                document.getElementById('opponent-score').innerText = 0
+                document.getElementById('your-choice').src = ""
+                document.getElementById('opponent-choice').src = ""
+            }
+
+        </script>
+</body>
+
+</html>
