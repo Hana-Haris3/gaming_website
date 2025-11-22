@@ -26,13 +26,13 @@
         </div>
         <button id="restart-button">Restart Game</button>
         <script>
-            let playerO = "O";
-            let playerX = "X";
-            let currPlayer = playerO;
+            let playerO = "O"
+            let playerX = "X"
+            let currPlayer = playerO
 
                     
-            let gameBoard = ["", "", "", "", "", "", "", "", ""];
-            let gameCells;
+            let gameBoard = ["", "", "", "", "", "", "", "", ""]
+            let gameCells
             let winningConditions = [
                 [0, 1, 2], 
                 [3, 4, 5], 
@@ -42,38 +42,38 @@
                 [2, 5, 8], 
                 [0, 4, 8], 
                 [2, 4, 6]  
-            ];
+            ]
 
-            let restartGameButton;
-            let gameOver = false;
+            let restartGameButton
+            let gameOver = false
 
             window.onload = function () {
-                gameCells = document.getElementsByClassName("game-cell");
+                gameCells = document.getElementsByClassName("game-cell")
                 for (let cell of gameCells) {
-                    cell.addEventListener("click", placeCell);
+                    cell.addEventListener("click", placeCell)
                 }
-                restartGameButton = this.document.getElementById("restart-button");
-                restartGameButton.addEventListener("click", restartGame);
+                restartGameButton = this.document.getElementById("restart-button")
+                restartGameButton.addEventListener("click", restartGame)
             }
 
             function placeCell() {
                 if (gameOver) {
                     alert('gameOver')
-                    return;
+                    return
                 }
 
                 const index = parseInt(this.getAttribute("data-cell-index"));
                 if (gameBoard[index] !== "") {
-                    return;
+                    return
                 }
 
-                gameBoard[index] = currPlayer; 
-                this.innerText = currPlayer; 
+                gameBoard[index] = currPlayer
+                this.innerText = currPlayer
 
                
-                currPlayer = (currPlayer == playerO) ? playerX : playerO;
+                currPlayer = (currPlayer == playerO) ? playerX : playerO
 
-                checkWinner();
+                checkWinner()
             }
 
             // function checkWinner() {
@@ -97,32 +97,30 @@
 
             function checkWinner() {
                 for (let winCondition of winningConditions) {
-                    let a = gameBoard[winCondition[0]];
-                    let b = gameBoard[winCondition[1]];
-                    let c = gameBoard[winCondition[2]];
+                    let a = gameBoard[winCondition[0]]
+                    let b = gameBoard[winCondition[1]]
+                    let c = gameBoard[winCondition[2]]
 
                     if (a == b && b == c && a != "") {
 
                         for (let index of winCondition) {
-                            gameCells[index].classList.add("winning-game-cell");
+                            gameCells[index].classList.add("winning-game-cell")
                         }
-
-                        gameOver = true;
-                        alert(a + " wins!");
-                        return;
+                        gameOver = true
+                        alert(a + " wins!")
+                        return
                     }
                 }
             }
 
             function restartGame() {
-                gameOver = false;
-                gameBoard = ["", "", "", "", "", "", "", "", ""];
+                gameOver = false
+                gameBoard = ["", "", "", "", "", "", "", "", ""]
                 for (let cell of gameCells) {
-                    cell.innerText = "";
-                    cell.classList.remove("winning-game-cell");
+                    cell.innerText = ""
+                    cell.classList.remove("winning-game-cell")
                 }
             }    
         </script>
 </body>
-
 </html>

@@ -9,6 +9,12 @@
   <style>
     body {
       background-color: rgb(221, 205, 205);
+      overflow-x: hidden;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
 
     .cards {
@@ -76,6 +82,38 @@
       transform: scale(1.1);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
+
+    #footer-container {
+      background-color: black;
+      margin-top: 300px;
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-div {
+      background-color: black;
+      width: 220px;
+      height: 20vh;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    span {
+      font-size: 15px;
+    }
+
+    #input {
+      border-radius: 5px;
+      border: 2px solid white;
+    }
   </style>
 </head>
 
@@ -83,30 +121,59 @@
   <%- include('navbar') %>
     <div class="container d-flex flex-wrap" id="main">
     </div>
-    <div class="container" id="section2">
-    </div>
-    <div id="game-container">
-      <a href="game/ticTacToe">
-        <div class="games">
-          <img src="/images/ticthumb.png">
-          <span>Tic-Tac-Toe</span>
-        </div>
-      </a>
-      <a href="game/titan">
-        <div class="games">
-          <img src="/images/titanthumb.png">
-          <div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-3">
+        <a href="game/ticTacToe">
+          <div class="games">
+            <img src="/images/ticthumb.png">
+            <span>Tic-Tac-Toe</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-3">
+        <a href="game/titan">
+          <div class="games">
+            <img src="/images/titanthumb.png">
             <span>Whack-A-Titan</span>
           </div>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-3">
+        <a href="game/rockPaperScissors">
+          <div class="games">
+            <img src="/images/rockthumb.png">
+            <span>Rock-Paper-Scissor</span>
+          </div>
+        </a>
+      </div>
+      <div id="section2">
+        <div id="footer-container">
+          <div class="footer-div"><span>Gaming-Nest.</span>
+            Play your favorite classic games<br> all in one place<br>
+            Tap, play, and see how far<br> you can go-the fun's all yours.
+          </div>
+          <div class="footer-div">
+            <span> Contact Us</span>
+            123@gmail.com<br>
+            facebook<br>
+            instagram<br>
+            X
+          </div>
+          <div class="footer-div">
+            <span> Legal</span>
+            Privacy policy<br>
+            Terms and Conditions
+          </div>
+          <div class="footer-div">
+            <span> Subscribe</span>
+            <p>Enter your email to get notified about our new games<br>
+              <input type="email" placeholder="Email" id="input">
+            </p>
+          </div>
         </div>
-      </a>
-      <a href="game/rockPaperScissors">
-        <div class="games">
-          <img src="/images/rockthumb.png">
-          <span>Rock-Paper-Scissor</span>
-        </div>
-      </a>
+      </div>
     </div>
+
     <script>
       const images = [
         '/images/card.png',
