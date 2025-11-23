@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+    <title>about</title>
+    <style>
+        body{
+            background-color: beige;
+            color: black;
+        }
+            #footer-container {
+      background-color: black;
+      margin-top: 300px;
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-div {
+      background-color: black;
+      width: 220px;
+      height: 20vh;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    span {
+      font-size: 15px;
+    }
+
+    #input {
+      border-radius: 5px;
+      border: 2px solid white;
+    }
+    </style>
+</head>
+<body>
+     <%- include('navbar') %>
+   <div class="container">
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-12 text-center">
+                <h1>About us</h1>
+                <p class="mt-5">This mini gaming website is to bring quick, fun, and easy-to-play games to everyone who just wants to dive in and enjoy without downloads, waiting times, or complicated controls. My goal is to offer a clean, fast, and exciting gaming experience with a growing collection of bite-sized games you can enjoy anytime, anywhere. Inspired by classic arcade simplicity, we focus on smooth gameplay, mobile-friendly design, and constant updates to keep things fresh. Whether you’re taking a short break or looking for a quick burst of entertainment, this is your space to play, relax, and have fun. Enjoy the games- more are coming soon!</p>
+            </div>
+            
+        </div>
+   </div>
+       <div id="section2">
+        <div id="footer-container">
+          <div class="footer-div"><span>Gaming-Nest.</span>
+            Play your favorite classic games<br> all in one place<br>
+            Tap, play, and see how far<br> you can go-the fun's all yours.
+          </div>
+          <div class="footer-div">
+            <span> Contact Us</span>
+            123@gmail.com<br>
+            facebook<br>
+            instagram<br>
+            X
+          </div>
+          <div class="footer-div">
+            <span> Legal</span>
+            Privacy policy<br>
+            Terms and Conditions
+          </div>
+          <div class="footer-div">
+            <span> Subscribe</span>
+            <p>Enter your email to get notified about our new games<br>
+              <input type="email" placeholder="Email" id="input">
+            </p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

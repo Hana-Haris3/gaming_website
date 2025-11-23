@@ -1,4 +1,4 @@
-const { homePage, game } = require('../controllers/home')
+const { homePage, game, about } = require('../controllers/home')
 
 const router = require('express').Router()
 
@@ -9,4 +9,8 @@ router
 router
   .route('/game')
   .get(game)
+
+router
+  .route('/about')
+  .get(about)
 module.exports = router

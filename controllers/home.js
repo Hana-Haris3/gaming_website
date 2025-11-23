@@ -4,3 +4,6 @@ exports.homePage=(req,res)=>{
 exports.game=(req,res)=>{
     res.render('games')
 }
+exports.about=(req,res)=>{
+    res.render('about')
+}
