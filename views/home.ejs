@@ -37,6 +37,39 @@
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
+
+          #footer-container {
+      background-color: black;
+      margin-top: 300px;
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-div {
+      background-color: black;
+      width: 220px;
+      height: 20vh;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    span {
+      font-size: 15px;
+    }
+
+    #input {
+      border-radius: 5px;
+      border: 2px solid white;
+    }
+  </style>
     </style>
 </head>
 
@@ -50,6 +83,33 @@
                 </div>
             </div>
         </div>
+
+         <div id="section2">
+        <div id="footer-container">
+          <div class="footer-div"><span>Gaming-Nest.</span>
+            Play your favorite classic games<br> all in one place<br>
+            Tap, play, and see how far<br> you can go-the fun's all yours.
+          </div>
+          <div class="footer-div">
+            <span> Contact Us</span>
+            123@gmail.com<br>
+            facebook<br>
+            instagram<br>
+            X
+          </div>
+          <div class="footer-div">
+            <span> Legal</span>
+            Privacy policy<br>
+            Terms and Conditions
+          </div>
+          <div class="footer-div">
+            <span> Subscribe</span>
+            <p>Enter your email to get notified about our new games<br>
+              <input type="email" placeholder="Email" id="input">
+            </p>
+          </div>
+        </div>
+      </div>
 </body>
 
 </html>
